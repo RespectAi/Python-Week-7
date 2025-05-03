@@ -1,6 +1,10 @@
 # Task 1
 
 import pandas as pd
+import os
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+from PIL import Image
 
 # Load CSV file
 df = pd.read_csv('temp.csv') 
@@ -39,8 +43,6 @@ df = pd.read_csv('temp.csv')
 
 # Task 2
 
-import pandas as pd
-
 # Load your CSV file
 file_path = "temp.csv"
 df = pd.read_csv(file_path)
@@ -52,7 +54,7 @@ numerical_df = df.drop('species', axis=1)
 mean = numerical_df.mean()
 median = numerical_df.median()
 std_dev = numerical_df.std()
-print('\n')
+
 # Mode (handles multiple modes or no mode)
 mode = numerical_df.mode().iloc[0]  # Takes the first mode if multiple exist
 
@@ -65,8 +67,6 @@ summary_df = pd.DataFrame({
 })
 
 print(summary_df)
-
-import pandas as pd
 
 # Load the CSV file
 df = pd.read_csv('temp.csv')
@@ -95,7 +95,7 @@ print("\nSepal Width Mean:\n", sepal_width_mean)
 
 ###  Identify any patterns or interesting findings from your analysis.
 
-print("\n Task 3. Identify any patterns or interesting findings from your analysis.\n\n")
+print("\n3. Identify any patterns or interesting findings from your analysis.\n\n")
 
 print ("1. Distinct Clustering by Species \n")
 print("The three species show clear separations in their mean measurements, making them ideal for classification tasks.\n ")
@@ -159,6 +159,13 @@ print("\033[3m plt.legend()\033[0m\n")
 print("\033[3m plt.grid(True) \033[0m\n")
 print("\033[3m plt.show()\033[0m\n")
 
+line_img_path = r"C:\Users\Admin\Documents\PLP Febuary Chort\Python2\Python Assignments\Python-Week-7\images\Line graph.jpg"
+img = mpimg.imread(line_img_path)
+plt.figure()
+plt.imshow(img)
+plt.axis('off')
+plt.show()
+
 # line chart explanation
 print("\n1. Test Across Observation Line Chart\n")
 print("This chart plots numerical attributes (e.g., sepal length, petal width) against the observation index (row number) in our dataset. Since our Iris dataset lacks a time-based column, the row index acts as a pseudo-sequence to visualize trends or anomalies across entries.\n")
@@ -177,6 +184,15 @@ print("2. Pairwise Relationship Chart (Pair Plot)\n\n")
 
 print("\033[3m sns.pairplot(df, hue='species') \033[0m\n")
 print("\033[3m plt.show() \033[0m\n")
+
+# This is the excact point i want to show the image (C:\Users\Admin\Documents\PLP Febuary Chort\Python2\Python Assignments\Python-Week-7\images\pairwise.jpg)
+
+pair_img_path = r"C:\Users\Admin\Documents\PLP Febuary Chort\Python2\Python Assignments\Python-Week-7\images\pairwise.jpg"
+img = mpimg.imread(pair_img_path)
+plt.figure()
+plt.imshow(img)
+plt.axis('off')
+plt.show()
 
 # Pairwise Relationship Chart (Pair Plot) explanation
 print("\n2. Pairwise Relationship Chart (Pair Plot)\n")
@@ -242,6 +258,13 @@ print("\033[3m fig.legend(handles, numerical_cols, loc='upper right', bbox_to_an
 print("\033[3m plt.suptitle('Statistical Comparison by Species and Attribute', fontsize=16) \033[0m\n")
 print("\033[3m plt.show() \033[0m\n")
 
+pair_img_path = r"C:\Users\Admin\Documents\PLP Febuary Chort\Python2\Python Assignments\Python-Week-7\images\Median.jpg"
+img = mpimg.imread(pair_img_path)
+plt.figure()
+plt.imshow(img)
+plt.axis('off')
+plt.show()
+
 # Bar Chart explanation
 print("1. Detailed Explanation of Mean, Median, and Standard Deviation Charts \n")
 print("These charts visualize key statistical measures (mean, median, and standard deviation) for each numerical attribute (sepal length, sepal width, petal length, petal width) across the three Iris species (setosa, versicolor, virginica).\n")
@@ -263,6 +286,13 @@ print("Interpretation:\n")
 print("Example: virginica has the highest SD in petal_width (0.27 cm), meaning petal widths vary widely.\n")
 print("Use Case: Assess data consistency.\n")
 
+pair_img_path = r"C:\Users\Admin\Documents\PLP Febuary Chort\Python2\Python Assignments\Python-Week-7\images\Mean median.jpg"
+img = mpimg.imread(pair_img_path)
+plt.figure()
+plt.imshow(img)
+plt.axis('off')
+plt.show()
+
 # Histogram
 print("\n\n Histogram\n")
 print(" Histogram of each species \n\n")
@@ -282,7 +312,7 @@ print("# Create subplots\n")
 print("\033[3m fig, axes = plt.subplots(3, 4, figsize=(20, 12)) \033[0m\n")
 print("\033[3m plt.subplots_adjust(hspace=0.4, wspace=0.3) \033[0m\n")
 
-print("# Plot histograms for each species and feature \033[0m\n")
+print("      # Plot histograms for each species and feature\n")
 print(" \033[3m for row, sp in enumerate(species): \033[0m\n")
 print(" \033[3m species_df = df[df['species'] == sp] \033[0m\n")
 print(" \033[3m for col, feature in enumerate(features): \033[0m\n")
@@ -302,10 +332,15 @@ print(" \033[3m ax.set_title(f'{sp} - {feature}', fontsize=10) \033[0m\n")
 print(" \033[3m ax.set_xlabel(f'{feature} (cm)') \033[0m\n")
 print(" \033[3m ax.set_ylabel('Frequency') \033[0m\n")
 print(" \033[3m ax.legend() \033[0m\n")
-
 print(" \033[3m plt.suptitle('Modal Intervals (Most Frequent Bins) for Each Species and Feature', fontsize=14, y=1.02) \033[0m\n")
 print(" \033[3m plt.show() \033[0m\n")
 
+pair_img_path = r"C:\Users\Admin\Documents\PLP Febuary Chort\Python2\Python Assignments\Python-Week-7\images\Histogram.jpg"
+img = mpimg.imread(pair_img_path)
+plt.figure()
+plt.imshow(img)
+plt.axis('off')
+plt.show()
 
 # Histogram explanation
 print("1. Histogram of Each Species\n")
@@ -316,6 +351,12 @@ print("Y-axis: Frequency (number of observations in each bin).\n")
 print("Bins: 15 intervals (ranges) dividing the data.\n")
 print("Red Shading: Highlights the modal interval (bin with the highest frequency).\n")
 
+pair_img_path = r"C:\Users\Admin\Documents\PLP Febuary Chort\Python2\Python Assignments\Python-Week-7\images\Histogram2.jpg"
+img = mpimg.imread(pair_img_path)
+plt.figure()
+plt.imshow(img)
+plt.axis('off')
+plt.show()
 
 #Scatter Plot
 print("\n\nScatter Plot\n")
@@ -346,6 +387,15 @@ print("\033[3m plt.ylabel('Petal Width (cm)', fontsize=12) \033[0m\n")
 print("\033[3m plt.grid(True, linestyle='--', alpha=0.3) \033[0m\n")
 print("\033[3m plt.legend(title='Species') \033[0m\n")
 print("\033[3m plt.show() \033[0m\n")
+
+# This is the exact point i want to show the image (C:\Users\Admin\Documents\PLP Febuary Chort\Python2\Python Assignments\Python-Week-7\images\Scatter plot.jpg)
+
+pair_img_path = r"C:\Users\Admin\Documents\PLP Febuary Chort\Python2\Python Assignments\Python-Week-7\images\Scatter plot.jpg"
+img = mpimg.imread(pair_img_path)
+plt.figure()
+plt.imshow(img)
+plt.axis('off')
+plt.show()
 
 # Scatter Plot explanation
 print("1. Petal Length vs. Petal Width Scatter Plot\n")
